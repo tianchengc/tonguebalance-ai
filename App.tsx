@@ -5,6 +5,8 @@ import { TongueAnalysis, ViewState, User, Language } from './types';
 import HistorySidebar from './components/HistorySidebar';
 import AnalysisResult from './components/AnalysisResult';
 import AuthModal from './components/AuthModal';
+import TermsOfService from './components/TermsOfService';
+import PrivacyPolicy from './components/PrivacyPolicy';
 import { Camera, Menu, Info, Loader2, ArrowRight, User as UserIcon, LogOut, Heart, Activity, Droplet, Wind, ThermometerSun, Globe, Mic, MicOff } from 'lucide-react';
 import { translations } from './utils/translations';
 
@@ -21,6 +23,8 @@ const App: React.FC = () => {
   // Auth State
   const [user, setUser] = useState<User | null>(null);
   const [isAuthOpen, setIsAuthOpen] = useState(false);
+  const [isTermsOpen, setIsTermsOpen] = useState(false);
+  const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
 
   // Form State
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -581,16 +585,47 @@ const App: React.FC = () => {
 
       {/* Footer */}
       <footer className="bg-[#EBE7E0] py-12 px-6">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="text-center md:text-left">
-            <h4 className="font-serif text-lg font-bold text-[#434A42]">{t.appName}</h4>
-            <p className="text-sm text-[#6B7068] mt-2">Harmonizing ancient wisdom with modern intelligence.</p>
+        <div className="max-w-5xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-8">
+            <div>
+              <h4 className="font-serif text-lg font-bold text-[#434A42]">{t.appName}</h4>
+              <p className="text-sm text-[#6B7068] mt-2">Harmonizing ancient wisdom with modern intelligence.</p>
+            </div>
+            <div className="max-w-md text-xs text-[#8C9A8B] leading-relaxed">
+              <span className="font-bold block mb-1">HEALTH DISCLAIMER</span>
+              <p>
+                This application is for educational and wellness purposes only and does not constitute medical advice, diagnosis, or treatment. 
+                Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.
+              </p>
+            </div>
           </div>
-          <div className="max-w-md text-xs text-[#8C9A8B] text-center md:text-right leading-relaxed">
-            <span className="font-bold block mb-1">HEALTH DISCLAIMER</span>
-            This application is for educational and wellness purposes only and does not constitute medical advice, diagnosis, or treatment. 
-            Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. 
-            Never disregard professional medical advice or delay in seeking it because of something you have read on this application.
+
+          {/* Footer Links */}
+          <div className="border-t border-[#D1CCC5] pt-6 flex flex-wrap gap-6 text-xs">
+            <button 
+              onClick={() => setIsTermsOpen(true)}
+              className="text-[#5E7153] hover:text-[#434A42] font-medium transition-colors"
+            >
+              Terms of Service
+            </button>
+            <button 
+              onClick={() => setIsPrivacyOpen(true)}
+              className="text-[#5E7153] hover:text-[#434A42] font-medium transition-colors"
+            >
+              Privacy Policy
+            </button>
+            <a 
+              href="https://github.com/tianchengc/tonguebalance-ai "
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#5E7153] hover:text-[#434A42] font-medium transition-colors"
+            >
+              GitHub
+            </a>
+          </div>
+
+          <div className="text-xs text-[#8C9A8B] mt-6">
+            © 2026 Tongue Balance AI. All rights reserved.
           </div>
         </div>
       </footer>
@@ -612,6 +647,20 @@ const App: React.FC = () => {
         isOpen={isAuthOpen} 
         onClose={() => setIsAuthOpen(false)}
         onLoginSuccess={handleLoginSuccess}
+        language={language}
+      />
+
+      {/* Terms of Service Modal */}
+      <TermsOfService 
+        isOpen={isTermsOpen}
+        onClose={() => setIsTermsOpen(false)}
+        language={language}
+      />
+
+      {/* Privacy Policy Modal */}
+      <PrivacyPolicy 
+        isOpen={isPrivacyOpen}
+        onClose={() => setIsPrivacyOpen(false)}
         language={language}
       />
     </div>
