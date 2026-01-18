@@ -2,6 +2,7 @@ import React from 'react';
 import { TongueAnalysis, Language } from '../types';
 import { Leaf, Droplet, Activity, ArrowRight, ShieldCheck } from 'lucide-react';
 import { translations } from '../utils/translations';
+import { isFeatureEnabled } from '../config/featureFlags';
 
 interface AnalysisResultProps {
   data: TongueAnalysis;
@@ -112,25 +113,27 @@ const AnalysisResult: React.FC<AnalysisResultProps> = ({ data, onReset, language
         </div>
       </div>
 
-      {/* Suggested Course (Monetization) */}
-      <div className="bg-stone-50 border border-stone-200 rounded-xl p-6 md:p-8 mb-12">
-         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex-1">
-               <div className="flex items-center gap-2 mb-2">
-                  <ShieldCheck className="text-amber-600" size={20} />
-                  <span className="text-xs font-bold text-amber-600 uppercase tracking-widest">{t.premiumRec}</span>
-               </div>
-               <h3 className="font-serif text-2xl text-[#2C332B] mb-2">{suggestedCourse.name}</h3>
-               <p className="text-[#6B7068] mb-3">{suggestedCourse.description}</p>
-               <span className="inline-block px-2 py-1 bg-stone-200 text-xs rounded text-stone-600 font-bold uppercase">
-                 {suggestedCourse.difficulty}
-               </span>
-            </div>
-            <button className="whitespace-nowrap px-6 py-3 bg-[#2C332B] text-white rounded-lg font-medium hover:bg-[#1A2019] transition-colors flex items-center gap-2 shadow-lg">
-              {t.startCourse} <ArrowRight size={16} />
-            </button>
-         </div>
-      </div>
+      {/* Suggested Course */}
+      {isFeatureEnabled('recommendations.suggestedCourse') && (
+        <div className="bg-stone-50 border border-stone-200 rounded-xl p-6 md:p-8 mb-12">
+           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="flex-1">
+                 <div className="flex items-center gap-2 mb-2">
+                    <ShieldCheck className="text-amber-600" size={20} />
+                    <span className="text-xs font-bold text-amber-600 uppercase tracking-widest">{t.premiumRec}</span>
+                 </div>
+                 <h3 className="font-serif text-2xl text-[#2C332B] mb-2">{suggestedCourse.name}</h3>
+                 <p className="text-[#6B7068] mb-3">{suggestedCourse.description}</p>
+                 <span className="inline-block px-2 py-1 bg-stone-200 text-xs rounded text-stone-600 font-bold uppercase">
+                   {suggestedCourse.difficulty}
+                 </span>
+              </div>
+              <button className="whitespace-nowrap px-6 py-3 bg-[#2C332B] text-white rounded-lg font-medium hover:bg-[#1A2019] transition-colors flex items-center gap-2 shadow-lg">
+                {t.startCourse} <ArrowRight size={16} />
+              </button>
+           </div>
+        </div>
+      )}
 
       <div className="text-center">
         <button 

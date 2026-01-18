@@ -9,6 +9,7 @@ import TermsOfService from './components/TermsOfService';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import { Camera, Menu, Info, Loader2, ArrowRight, User as UserIcon, LogOut, Heart, Activity, Droplet, Wind, ThermometerSun, Globe, Mic, MicOff } from 'lucide-react';
 import { translations } from './utils/translations';
+import { isFeatureEnabled } from './config/featureFlags';
 
 const App: React.FC = () => {
   const [view, setView] = useState<ViewState>('home');
@@ -245,14 +246,14 @@ const App: React.FC = () => {
                   <LogOut size={20} />
                 </button>
               </div>
-            ) : (
+            ) : isFeatureEnabled('auth.loginButton') ? (
               <button 
                 onClick={() => setIsAuthOpen(true)}
                 className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-[#5E7153] border border-[#5E7153] rounded-full hover:bg-[#5E7153] hover:text-white transition-all"
               >
                 <UserIcon size={16} /> {t.login}
               </button>
-            )}
+            ) : null}
           </div>
         </div>
       </nav>
