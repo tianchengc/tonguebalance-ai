@@ -70,7 +70,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ isOpen, onClose, language
               <div>
                 <p className="font-bold text-[#434A42] mb-2">Marketing (Opt-In Only)</p>
                 <p className="text-[#6B7068] leading-relaxed ml-4 border-l-2 border-[#5E7153] pl-4">
-                  If you explicitly opt-in, we may use your email to send updates about ChaDynasty Wellness products, new courses, or wellness tips.
+                  If you explicitly opt-in, we may use your email to send updates about TongueBalance Wellness products, new courses, or wellness tips.
                 </p>
               </div>
               <div>
@@ -166,8 +166,8 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ isOpen, onClose, language
               For questions about this Privacy Policy or to exercise your data rights, please contact:
             </p>
             <div className="bg-[#F7F5F2] p-4 rounded-lg mt-3 space-y-2 text-sm">
-              <p><span className="font-bold">Email:</span> <span className="font-mono text-[#5E7153]">privacy@chadynasty.wellness</span></p>
-              <p><span className="font-bold">Company:</span> ChaDynasty Wellness / TwoHundredK Technologies</p>
+              <p><span className="font-bold">Email:</span> <span className="font-mono text-[#5E7153]">privacy@tonguebalance.ai</span></p>
+              <p><span className="font-bold">Company:</span> TongueBalance Inc.</p>
             </div>
           </section>
 

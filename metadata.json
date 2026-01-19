@@ -1,5 +1,5 @@
 {
-  "name": "Shang Yi AI",
+  "name": "TongueBalance AI",
   "description": "A Zen-inspired Traditional Chinese Medicine (TCM) wellness application. Upload a tongue image for AI-powered analysis, health insights, and personalized preventive care recommendations based on the philosophy of 'Shang Yi Zhi Wei Bing'.",
   "requestFramePermissions": [
     "camera",

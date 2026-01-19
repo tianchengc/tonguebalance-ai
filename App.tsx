@@ -210,9 +210,11 @@ const App: React.FC = () => {
               setCurrentAnalysis(null);
             }}
           >
-            <div className="w-8 h-8 rounded-full bg-[#5E7153] flex items-center justify-center text-white font-serif italic font-bold">
-              S
-            </div>
+            <img 
+              src="/logo.png" 
+              alt="TongueBalance AI Logo" 
+              className="h-8 w-8"
+            />
             <span className="font-serif text-xl text-[#434A42] tracking-tight">{t.appName}</span>
           </div>
           
@@ -589,7 +591,14 @@ const App: React.FC = () => {
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-8">
             <div>
-              <h4 className="font-serif text-lg font-bold text-[#434A42]">{t.appName}</h4>
+              <div className="flex items-center gap-2 mb-2">
+                <img 
+                  src="/logo.png" 
+                  alt="TongueBalance AI" 
+                  className="h-6 w-6"
+                />
+                <h4 className="font-serif text-lg font-bold text-[#434A42]">{t.appName}</h4>
+              </div>
               <p className="text-sm text-[#6B7068] mt-2">Harmonizing ancient wisdom with modern intelligence.</p>
             </div>
             <div className="max-w-md text-xs text-[#8C9A8B] leading-relaxed">

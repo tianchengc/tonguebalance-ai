@@ -3,7 +3,7 @@ import { Language } from "../types";
 export const translations = {
   en: {
     // Navbar
-    appName: "Shang Yi AI",
+    appName: "TongueBalance AI",
     hello: "Hello",
     login: "Login",
     logout: "Logout",
@@ -215,7 +215,7 @@ export const translations = {
   },
   fr: {
     // Navbar
-    appName: "Shang Yi AI",
+    appName: "TongueBalance AI",
     hello: "Bonjour",
     login: "Connexion",
     logout: "Déconnexion",

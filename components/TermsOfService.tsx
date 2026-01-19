@@ -63,7 +63,7 @@ const TermsOfService: React.FC<TermsOfServiceProps> = ({ isOpen, onClose, langua
           <section className="space-y-4">
             <h3 className="text-xl font-serif font-bold text-[#2C332B]">4. Monetization & Purchases</h3>
             <p className="text-[#6B7068] leading-relaxed mb-3">
-              Purchases of online courses (e.g., Ba Duan Jin Mastery, Yin Nourishing Kitchen) or physical goods (e.g., Wellness Tea Blends) are subject to the refund policies of ChaDynasty Wellness. Access to "Premium" features requires a valid user account and may be subject to recurring charges.
+              Purchases of online courses (e.g., Ba Duan Jin Mastery, Yin Nourishing Kitchen) or physical goods (e.g., Wellness Tea Blends) are subject to the refund policies of TongueBalance Wellness. Access to "Premium" features requires a valid user account and may be subject to recurring charges.
             </p>
             <p className="text-[#6B7068] leading-relaxed">
               All prices are subject to change with notice. Refunds are available within 30 days of purchase if the digital product has not been substantially used.
@@ -73,7 +73,7 @@ const TermsOfService: React.FC<TermsOfServiceProps> = ({ isOpen, onClose, langua
           <section className="space-y-4">
             <h3 className="text-xl font-serif font-bold text-[#2C332B]">5. Limitation of Liability</h3>
             <p className="text-[#6B7068] leading-relaxed mb-3">
-              To the maximum extent permitted by law, TongueBalance AI and its parent companies (TwoHundredK Technologies / ChaDynasty Wellness) shall not be liable for any indirect, incidental, special, or consequential damages resulting from the use (or inability to use) the service.
+              To the maximum extent permitted by law, TongueBalance AI and its affiliates shall not be liable for any indirect, incidental, special, or consequential damages resulting from the use (or inability to use) the service.
             </p>
             <p className="text-[#6B7068] leading-relaxed">
               This includes but is not limited to: data loss, business interruption, loss of profits, or health-related issues arising from reliance on the AI analysis.
@@ -97,7 +97,7 @@ const TermsOfService: React.FC<TermsOfServiceProps> = ({ isOpen, onClose, langua
           <section className="space-y-4">
             <h3 className="text-xl font-serif font-bold text-[#2C332B]">8. Contact</h3>
             <p className="text-[#6B7068] leading-relaxed">
-              For questions about these Terms of Service, please contact us at <span className="font-mono text-[#5E7153]">support@chadynasty.wellness</span>
+              For questions about these Terms of Service, please contact us at <span className="font-mono text-[#5E7153]">support@tonguebalance.ai</span>
             </p>
           </section>
 
